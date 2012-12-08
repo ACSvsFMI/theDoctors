@@ -18,5 +18,24 @@ function ManageController($scope, $http) {
  
     }
 
+    $scope.add_target = function (suggested) {
+        
+        $http.post('api/v1/target/',
+            data = {
+                'google_id': suggested.id,
+                'photo_url': suggested.image.url,
+                'name': suggested.displayName
+            }).success( function () {
+                alert('Target added');
+            })
+    }
+
+    $scope.remove_target = function (target) {
+        $http.delete('api/v1/target/' + target.google_id).success(
+            function () {
+                alert('Target deleted');
+            }
+        );
+    }
 }
 

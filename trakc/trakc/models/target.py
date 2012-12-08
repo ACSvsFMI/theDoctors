@@ -17,16 +17,5 @@ class Target(models.Model):
 
 	target_photo = models.CharField(max_length=256)
 
-	targeted_by = models.ManyToManyField(User, through='UsersAndTargets', related_name='targeted_by')
-
-class UsersAndTargets(models.Model):
-
-	class Meta:
-		app_label = 'trakc'
-
-	user = models.ForeignKey(User)
-	target = models.ForeignKey(Target)
-
-	platform = JSONField(default={},
-					help_text='''The platforms on which this a user spies a target''')
+	targeted_by = models.ManyToManyField(User, related_name='targeted_by')
 

@@ -1,8 +1,8 @@
 <div ng-repeat="t in targets">
 
+    <img src="{{t.target_photo}}" alt="avatar" />
     <h3>{{t.name}}</h3>
-    <h6>{{t.fuck}}</h6>
-
+    <button class="btn" ng-click="remove_target(t)">Remove</button>
 
 </div>
 
@@ -22,7 +22,7 @@
         <div ng-repeat="suggested in suggestions" class="suggested">
             <img src="{{suggested.image.url}}" alt="profile_pic" />
             <p style="position:absolute; left:55px; top:15px">{{suggested.displayName}}</p>
-            <button class="btn" style="position:absolute; right:5px; top:13px">+</button>
+            <button class="btn" style="position:absolute; right:5px; top:13px" ng-click="add_target(suggested)">+</button>
         </div>
 
     </div>
