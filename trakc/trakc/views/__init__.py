@@ -1,2 +1,2 @@
-from home_view import HomeView, UserLoginView
+from home_view import HomeView, UserLoginView, UserLogoutView
 

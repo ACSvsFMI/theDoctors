@@ -105,6 +105,10 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'trakc.urls'
 
+AUTHENTICATIN_BACKENDS = (
+    'trakc.backends.EmailAuthentication',
+)
+
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'trakc.wsgi.application'
 
