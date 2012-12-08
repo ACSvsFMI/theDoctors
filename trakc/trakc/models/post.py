@@ -1,5 +1,4 @@
 from django.db import models
-
 from json_field import JSONField
 
 class Post(models.Model):
