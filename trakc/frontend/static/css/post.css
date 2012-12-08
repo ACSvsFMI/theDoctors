@@ -119,3 +119,12 @@ h3.cK {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
+
+.suggested {
+  position:relative; 
+  padding:3px 1px;
+}
+
+.suggested:hover {
+  background-color: blue;
+}

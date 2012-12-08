@@ -19,10 +19,10 @@
         <input ng-model="target_name" type="text" placeholder="Target name" class="ng-valid ng-dirty">
         <button ng-click="fetch_partial_results()" nd-disabled="target_name.length==0" class="btn">Search</button>
 
-        <div ng-repeat="suggested in suggestions">
+        <div ng-repeat="suggested in suggestions" class="suggested">
             <img src="{{suggested.image.url}}" alt="profile_pic" />
-            <p>{{suggested.displayName}}</p>
-            <button class="btn" >+</button>
+            <p style="position:absolute; left:55px; top:15px">{{suggested.displayName}}</p>
+            <button class="btn" style="position:absolute; right:5px; top:13px">+</button>
         </div>
 
     </div>
