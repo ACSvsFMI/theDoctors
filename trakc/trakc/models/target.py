@@ -10,9 +10,6 @@ class Target(models.Model):
 
 	google_id = models.CharField(max_length=64,
 					help_text='''The id to identify target on Google+''')
-
-	facebook_id = models.CharField(max_length=64,
-					help_text='''The id to identify target on Facebook''')
 	
 	name = models.CharField(max_length=64,
 					help_text='''Name of target retrieved from social platform.

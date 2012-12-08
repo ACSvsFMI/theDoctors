@@ -6,17 +6,9 @@ class Action(models.Model):
     class Meta:
         app_label = 'trakc'
 
-    name = models.CharField(max_length=16)
-    
-    cost = models.ManyToManyField(User, through='UsersAndActions')
-
-class UsersAndActions(models.Model):
-    
-    class Meta:
-        app_label = 'trakc'
-
     user = models.ForeignKey(User)
-    action = models.ForeignKey(Action)
-
-    action_cost = models.IntegerField(default=1)
+    
+    like_cost = models.IntegerField(default=1)
+    share_cost = models.IntegerField(default=1)
+    comment_cost = models.IntegerField(default=1)
 

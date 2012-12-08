@@ -9,16 +9,11 @@ class Post(models.Model):
     author = models.ForeignKey('Target')
 
     post_date = models.DateTimeField('date posted')
+
+    content = JSONField(default={})
     
-    actions = models.ManyToManyField('Action', through='ActionsAndPosts')
+    likes = models.IntegerField(default=0)
 
-class ActionsAndPosts(models.Model):
+    shares = models.IntegerField(default=0)
 
-    class Meta:
-        app_label = 'trakc'
-    
-    action = models.ForeignKey('Action')
-    post = models.ForeignKey('Post')
-
-    action_count = models.IntegerField(default=0)
-
+    comments = models.IntegerField(default=0)
