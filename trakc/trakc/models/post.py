@@ -8,6 +8,8 @@ class Post(models.Model):
 
     author = models.ForeignKey('Target')
 
+    google_id = models.CharField(max_length=64)
+
     post_date = models.DateTimeField('date posted')
 
     content = JSONField(default={})
