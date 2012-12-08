@@ -23,28 +23,39 @@
                   </a>
                   <div class="nav-collapse collapse">
                     <ul class="nav">
-                      <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort<b class="caret"> </b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Relevant</a></li>
-                            <li><a href="#">Last</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#about">About</a></li>
-                      <li><a href="#contact">Contact</a></li>
+                      <br />
+                      <input ng-model="filterer" placeholder="search">
+                      <br />
+                      <select ng-model="post_sort">
+                            <option value="rel_data" selected>Relevant</option>
+                            <option value="likes">Likes</option>
+                            <option value="shares">Shares</option>
+                            <option value="comments">Comments</option>
+                            <option value="post_date">Last</option>
+                      </select>
                     </ul>
                   </div><!--/.nav-collapse -->
                 </div>
               </div>
             </div>
-            <div ng-repeat="p in posts">
+            <div ng-repeat="p in posts | orderBy:post_sort | filter: filterer">
 
                 <h3>{{p.author.name}}</h3>
                 <h6>{{p.content}}</h6>
 
             </div>
+
+
+<ul class="pager">
+  <li>
+    <button ng-click="goprevpage()">Previous</button>
+  </li>
+  <li>
+    <button ng-click="gonextpage()">Next</button>
+  </li>
+</ul>
+
       </div>
-
-
     <script type="text/javascript">
 
         $('#date_since').datepicker().on('changeDate', function (ev) {
