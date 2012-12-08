@@ -23,7 +23,7 @@ class Target(models.Model):
 class UsersAndTargets(models.Model):
 	
 	user = models.ForeignKey(User)
-	target = mdoels.ForeignKey(Target)
+	target = models.ForeignKey(Target)
 
 	platform = models.JSONField(default={},
 					help_text='''The platforms on which this a user spies a target''')
