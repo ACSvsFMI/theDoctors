@@ -13,4 +13,3 @@ class TargetResource(TrakcBaseResource):
 		#return Target.objects.filter(~Q(id__in=<mycampaign>.targeted_by.all())
 		return Target.objects.filter(id__in=[u.id for u in user.usersandtargets_set.all()])
 
-	
