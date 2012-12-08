@@ -18,12 +18,16 @@ class Target(models.Model):
 					help_text='''Name of target retrieved from social platform.
 								Used to display it in interface''')
 
-	targeted_by = models.ManyToMany(User, through=UsersAndTargets)
+	targeted_by = models.ManyToManyField(User, through='UsersAndTargets', related_name='targeted_by')
 
 class UsersAndTargets(models.Model):
-	
-	user = models.ForeignKey(User)
-	target = mdoels.ForeignKey(Target)
 
-	platform = models.JSONField(default={},
+	class Meta:
+		app_label = 'trakc'
+
+	user = models.ForeignKey(User)
+	target = models.ForeignKey(Target)
+
+	platform = JSONField(default={},
 					help_text='''The platforms on which this a user spies a target''')
+
