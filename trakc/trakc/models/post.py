@@ -12,8 +12,6 @@ class Post(models.Model):
     
     actions = models.ManyToMany()
 
-    targeted_by = models.ManyToMany(Action, through=ActionsAndPosts)
-
 class ActionsAndPosts(models.Model):
     
     action = models.ForeignKey(Action)
