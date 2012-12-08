@@ -5,8 +5,8 @@ from django.views.generic import View
 class HomeView(View):
     
 	def get(self, request, *args, **kwargs):
-		if request.user.is_authenticated() is False:
-			return redirect('/login')
+		#if request.user.is_authenticated() is False:
+		#	return redirect('/login')
 
 		return render_to_response('index.html', context_instance=RequestContext(request))
 
