@@ -15,7 +15,7 @@ class Target(models.Model):
 					help_text='''Name of target retrieved from social platform.
 								Used to display it in interface''')
 
-	target_photo = models.CharField(max_length=256)
+	target_photo = models.CharField(max_length=256, null=True, blank=True)
 
 	targeted_by = models.ManyToManyField(User, through='UsersAndTargets', related_name='targeted_by')
 
