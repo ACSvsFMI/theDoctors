@@ -11,7 +11,7 @@ class Action(models.Model):
     
     cost = models.ManyToMany(User, through=UsersAndActions)
 
-class ActionsAndPosts(models.Model):
+class UsersAndActions(models.Model):
     
     user = models.ForeignKey(User)
     action = models.ForeignKey(Action)
