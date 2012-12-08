@@ -3,6 +3,7 @@ from trakc.models import Post
 from trakc.api import TargetResource
 from tastypie import fields
 from datetime import datetime
+import simplejson as json
 
 class PostResource(TrakcBaseResource):
 
@@ -34,4 +35,9 @@ class PostResource(TrakcBaseResource):
 		action = user.action_set.all()[0]
 		ref_ind = post.likes * action.like_cost + post.shares * action.share_cost + post.comments * action.comment_cost
 		bundle.data['rel_data'] = str(ref_ind)
+
+		try:
+			bundle.data['content'] = json.loads(bundle.data['content'][:-3] + ']')[0]
+		except:
+			pass
 		return bundle
