@@ -19,11 +19,11 @@
               </div>
             </div>
 
-<div ng-repeat="t in targets">
+<div ng-repeat="t in targets" class="suggested">
 
-    <img src="{{t.target_photo}}" alt="avatar" />
-    <h3>{{t.name}}</h3>
-    <button class="btn" ng-click="remove_target(t)">Remove</button>
+    <img src="{{t.target_photo}}" alt="avatar"/>
+    <h3 style="position:absolute; left:55px; top:-3px">{{t.name}}</h3>
+    <button class="btn" ng-click="remove_target(t)" style="position:absolute; right:5px; top:9px">Remove</button>
 
 </div>
 
