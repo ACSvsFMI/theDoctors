@@ -54,14 +54,15 @@
 
     <div class="container">
 
-      <form class="form-signin" action="login" method="post">
+      <form class="form-signin" action="register" method="post">
         {% csrf_token %} 
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Please fill in the details</h2>
+        <input type="text" name="first_name" class="input-block-level" placeholder="First name">
+        <input type="text" name="last_name" class="input-block-level" placeholder="Last name">
         <input type="text" name="email" class="input-block-level" placeholder="Email address">
         <input type="password" name="password" class="input-block-level" placeholder="Password">
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
         <p>{{error}}</p>
-        <a href="register">Register</a>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </form>
 
     </div> <!-- /container -->

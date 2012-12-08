@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from trakc.views import HomeView, UserLoginView, UserLogoutView
+from trakc.views import HomeView, UserLoginView, UserLogoutView, UserRegisterView
 from trakc.api import trakc_api
 
 # Uncomment the next two lines to enable the admin:
@@ -17,8 +17,9 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    # Login and logout urls
+    # Login, logout and register urls
 	url(r'^login$', UserLoginView.as_view()),
 	url(r'^logout$', UserLogoutView.as_view()),
+	url(r'^register$', UserRegisterView.as_view()),
 )
 
