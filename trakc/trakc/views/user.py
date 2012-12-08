@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext
 from django.views.generic import View
 from django.contrib.auth import authenticate, login, logout
+from trakc.models import Action
 
 class UserLoginView(View):
 	
@@ -90,6 +91,13 @@ class UserRegisterView(View):
         user.last_name = last_name
         user.is_active = True
         user.save()
+
+        action = Action()
+        action.like_cost = 1
+        action.share_cost = 1
+        action.comment_cost = 1
+        action.user_id = user.id
+        action.save()
 
         # Login the user now
         user = authenticate(username=email, password=password)
