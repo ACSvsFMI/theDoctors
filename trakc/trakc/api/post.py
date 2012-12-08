@@ -25,7 +25,7 @@ class PostResource(TrakcBaseResource):
 			until = datetime.now()
 		else:
 			until = datetime.fromtimestamp(int(until)/1000)
-		return Post.objects.filter(author_id__in=[u.id for u in user.usersandtargets_set.all()], post_date__lte=until, post_date__gte=since)
+		return Post.objects.filter(author_id__in=[u.id for u in user.targeted_by.all()], post_date__lte=until, post_date__gte=since)
 
 	def dehydrate(self, bundle):
 		#import pdb; pdb.set_trace()
