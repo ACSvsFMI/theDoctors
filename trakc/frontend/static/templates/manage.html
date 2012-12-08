@@ -1,3 +1,24 @@
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="container-fluid">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <div class="nav-collapse collapse">
+                    <div class="nav" style="width:100%">
+                        <span class="brand">Weights:</span>
+                        +1 <input type="text" class="span1" ng-model="costs.like_cost">
+                        Share <input type="text" class="span1" ng-model="costs.share_cost">
+                        Comment <input type="text" class="span1" ng-model="costs.comment_cost">
+                        <button class="btn pull-right" ng-click="update_weights()">Update</button>
+                    </div>
+                  </div><!--/.nav-collapse -->
+                </div>
+              </div>
+            </div>
+
 <div ng-repeat="t in targets">
 
     <img src="{{t.target_photo}}" alt="avatar" />

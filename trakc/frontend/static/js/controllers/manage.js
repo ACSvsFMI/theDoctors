@@ -4,6 +4,12 @@ function ManageController($scope, $http) {
         $scope.targets = data.objects;
     })
 
+    $http.get('api/v1/user/0').success(function(data) {
+
+        $scope.costs = data
+
+    });
+
     $scope.fetch_partial_results = function() {
         var t_name = $scope.target_name
    
@@ -36,6 +42,23 @@ function ManageController($scope, $http) {
                 alert('Target deleted');
             }
         );
+    }
+
+    $scope.update_weights = function () {
+        var like = parseInt($scope.costs.like_cost)
+        var share = parseInt($scope.costs.share_cost)
+        var comment = parseInt($scope.costs.comment_cost)
+    
+        if (like > 0 && share > 0 && comment > 0) {
+            $http.put('api/v1/user/0', 
+                data= {
+                    'like': like,
+                    'share': share,
+                    'comment': comment
+                }).success( function () {
+                    alert("Weights updates");
+                });
+        }
     }
 }
 
