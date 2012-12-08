@@ -20,11 +20,11 @@ class PostResource(TrakcBaseResource):
 		if (len(since) <= 1):
 			since = '2008-01-01 00:00:01'
 		else:
-			since = datetime.fromtimestamp(int(since))
+			since = datetime.fromtimestamp(int(since)/1000)
 		if (len(str(until)) <= 1):
 			until = datetime.now()
 		else:
-			since = datetime.fromtimestamp(int(until))
+			until = datetime.fromtimestamp(int(until)/1000)
 		return Post.objects.filter(author_id__in=[u.id for u in user.usersandtargets_set.all()], post_date__lte=until, post_date__gte=since)
 
 	def dehydrate(self, bundle):

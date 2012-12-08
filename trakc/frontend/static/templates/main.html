@@ -60,6 +60,7 @@
 
         $('#date_since').datepicker().on('changeDate', function (ev) {
           $('#date_since_hidden').val(ev.date.valueOf())
+          //alert(ev.date.valueOf())
         });
         $('#date_until').datepicker().on('changeDate', function (ev) {
           $('#date_until_hidden').val(ev.date.valueOf())
