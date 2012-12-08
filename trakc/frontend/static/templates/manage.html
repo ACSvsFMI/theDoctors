@@ -3,4 +3,32 @@
     <h3>{{t.name}}</h3>
     <h6>{{t.fuck}}</h6>
 
+
 </div>
+
+<a href="#modal_add_target" role="button" class="btn" data-toggle="modal">
+    Add new target
+</a><br><br>
+
+<div id="modal_add_target" class="modal hide fade ng-scope" tabindex="-1" role="dialog" aria-labelledby="list_modal_label" aria-hidden="true" style="display: none;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 id="list_modal_label">Add new target</h3>
+    </div>
+    <div class="modal-body">
+        <input ng-model="target_name" type="text" placeholder="Target name" class="ng-valid ng-dirty">
+        <button ng-click="fetch_partial_results()" nd-disabled="target_name.length==0" class="btn">Search</button>
+
+        <div ng-repeat="suggested in suggestions">
+            <img src="{{suggested.image.url}}" alt="profile_pic" />
+            <p>{{suggested.displayName}}</p>
+            <button class="btn" >+</button>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        <button id="save_new_list" class="btn btn-primary" ng-click="save_new_list()">Save</button>
+    </div>
+</div>
+
