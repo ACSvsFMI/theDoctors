@@ -1,0 +1,46 @@
+
+      
+      <div class="well" style="float:left; width:200px; padding:8px 0; margin:8px">
+        <ul class="nav nav-list">
+          <li class="nav-header">Filters</li>
+          <li><input class="span2" type="text" id="date_since" placeholder="since"></li>
+          <li><input class="span2" type="text" id="date_until" placeholder="until"></li>
+          <button class="btn" id="apply_filter">Filter</button>
+        </ul>
+      </div>
+      
+      <div class="well" style="float:left; width:600px; padding:0px 0px 8px 0; margin:8px">
+    
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="container-fluid">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <div class="nav-collapse collapse">
+                    <ul class="nav">
+                      <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort<b class="caret"> </b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Relevant</a></li>
+                            <li><a href="#">Last</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+                </div>
+              </div>
+            </div>
+
+      </div>
+
+
+    <script type="text/javascript">
+
+        $('#date_since').datepicker();
+        $('#date_until').datepicker();
+
+    </script>
