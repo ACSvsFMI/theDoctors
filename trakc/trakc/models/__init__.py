@@ -1,4 +1,4 @@
 from target import Target, UsersAndTargets
-from post import Post, ActionsAndPosts
-from action import UsersAndActions
+from post import Post
+from action import Action
 

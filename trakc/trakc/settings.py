@@ -105,6 +105,10 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'trakc.urls'
 
+AUTHENTICATIN_BACKENDS = (
+    'trakc.backends.EmailAuthentication',
+)
+
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'trakc.wsgi.application'
 
@@ -127,7 +131,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'trakc',
-	'json_field'
+	'json_field',
+    'south'
 )
 
 # A sample logging configuration. The only tangible logging

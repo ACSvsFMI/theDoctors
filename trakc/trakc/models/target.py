@@ -10,13 +10,12 @@ class Target(models.Model):
 
 	google_id = models.CharField(max_length=64,
 					help_text='''The id to identify target on Google+''')
-
-	facebook_id = models.CharField(max_length=64,
-					help_text='''The id to identify target on Facebook''')
 	
 	name = models.CharField(max_length=64,
 					help_text='''Name of target retrieved from social platform.
 								Used to display it in interface''')
+
+	target_photo = models.CharField(max_length=256)
 
 	targeted_by = models.ManyToManyField(User, through='UsersAndTargets', related_name='targeted_by')
 
