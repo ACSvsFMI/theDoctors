@@ -1,17 +1,7 @@
 function ManageController($scope, $http) {
    
-    $http.get('fuck');
-
-    $scope.targets = [
-        {
-            'name': 'shit',
-            'fuck': 'cock',
-        },
-        {
-            'name': 'crap',
-            'fuck': 'click',
-        }
-    ]
-
+    $http.get('api/v1/target/').success(function(data) {
+        $scope.targets = data.objects;
+    })
 }
 
