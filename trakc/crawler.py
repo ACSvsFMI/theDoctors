@@ -1,3 +1,8 @@
+# This script crawls google+ to obtain posts from targets
+# There should be a cron job for this to run
+
+# For tests, you can run this manually
+
 import sys
 import _mysql
 import apiclient.discovery
